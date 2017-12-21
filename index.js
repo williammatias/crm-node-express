@@ -7,10 +7,15 @@ const app = express();
 const PORT = 3000;
 
 // bodyparser setup
-app.use(bodyParser.urlencoded({extender: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(session({secret: "capone123"}));
+app.use(session
+({
+    secret: "capone123",
+    resave: false,
+    saveUninitialized: true,
+}));
 
 routes(app);
 

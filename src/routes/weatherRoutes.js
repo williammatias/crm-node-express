@@ -18,8 +18,6 @@ const routers = (app) => {
         // delete measurement route
         .delete(measurementsController.remove);
 
-    app.route('/measurements/:date')
-        .get(measurementsController.getByDate);
     app.route('/stats')
         .get(statsController.get);
 }
